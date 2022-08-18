@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="POST" action="exercicio1.html">
+        <fieldset>
+            <legend>Dados do Formulário</legend>
+            <div>
+                <label>Nome:</label>
+                <input type="text" name="nome" required>
+            </div>
+            <div>
+                <label>Data Nascimento:</label>
+                <input name="dtNasc" type="date" value="2022-08-15" min="1900-01-01" max="2022-08-16">
+            </div>
+            <div>
+                <label>Cor Favorita:</label>
+                <input type="color" name="corFavorita">
+            </div>
+            <div>
+                <label>Sexo:</label>
+                <input name="sexo" id="masc" type="radio" value="M" checked>
+                <label for="masc">Masculino</label>
+                <input name="sexo" id="fem" type="radio" value="F">
+                <label for="fem">Feminino</label>
+            </div>
+            <div>
+                <label>Esporte favorito:</label>
+                <input name="esporteFavorito" id="fut" type="checkbox" value="Futebol">
+                <label for="fut">Futebol</label>
+                <input name="esporteFavorito" id="basq" type="checkbox" value="Basquete">
+                <label for="basq">Basquete</label>
+                <input name="esporteFavorito" id="vol" type="checkbox" value="Volei">
+                <label for="vol">Volei</label>
+            </div>
+            <div>
+                <label>Senha:</label>
+                <input type="password" name="senha">
+            </div>
+            <div>
+                <label>Foto do Perfil:</label>
+                <input type="file" name="foto">
+            </div>
+            <div>
+                <label>Observação:</label>
+                <textarea name="observacao" rows="5" cols="80"></textarea>
+            </div>
+            <div>
+                <label>Categoria</label>
+                <select name="categoria">
+                    <option value="cat1">Categoria 1</option>
+                    <option value="cat2">Categoria 2</option>
+                    <option value="cat3">Categoria 3</option>
+                    <optgroup label="SubCategoria 1">
+                        <option value="cat4">Categoria 4</option>
+                        <option value="cat5">Categoria 5</option>
+                        <option disabled value="cat6">Categoria 6</option>
+                    </optgroup>
+                    <optgroup label="SubCategoria 2">
+                        <option value="cat7">Categoria 7</option>
+                        <option value="cat8">Categoria 8</option>
+                        <option value="cat9">Categoria 9</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Salvar</button>
+                <button type="reset">Limpar Formulário</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>
