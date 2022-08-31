@@ -6,21 +6,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .teste{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            transition: width 2s, height 4s;
+            display: inline-block;
+        }
+        .teste:hover{
+            width: 300px;
+            height: 300px;
+        }
+        .zoom{
+            padding: 50px;
+            background-color: green;
+            transition: transform .5s; /*animacao*/
+            width: 200px;
+            height: 200px;         
+            display: inline-block;
+        }
+        .zoom:hover{
+            transform: scale(1.5);
+        }
+        a:link{
+            color: green;
+        }
+        a:visited{
+            color: dimgrey;
+        }
+        a:hover,a:focus{
+            font-size: xx-large;
+        }
+        a:active{
+            color: red;
+        }
+
+        #listaDetalhe{
+            text-align: center;
+            font-style: italic;    
+        }
+        .cabecalho {
+            background-color: aqua;
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        body {
+            background-color: green;
+        }
+
+        p a {
+            background-color: lightblue;
+        }
+
+        table {
+            border: solid 1px;
+            width: 100%;
+            border-spacing: 0px;
+        }
+
+        td {
+            padding: 10px;
+            border: solid 1px;
+        }
+
+        th {
+            padding: 10px;
+            border: solid 1px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
-<body>
-    <img src="img/facens.jpg" alt="Logo da Facens" width="400px"><br><br>
-    <a href="#programacaoWeb">Programação Web </a> <br />
-    <a href="#redeDeComputadores">Rede de Computadores</a><br />
-    <a href="#tcpIP">TCP/IP</a><br />
-    <a href="#http">Protocolo HTTP</a><br />
-    <a href="#desenvolvimentoWeb">Desenvolvimento Web</a><br />
-    <a href="#html">HTML</a><br />
-    <p>
-        <a href="formulario.html" target="_blank">Abrir Formulário</a>
-    </p>
+<body style="background-color: red;">
+    <div class="zoom"></div>
+    <div class="teste"></div>
+    <header class="cabecalho">
+        <img style="display: block; margin: 0px auto;" src="img/facens.jpg" alt="Logo da Facens" width="400px">
+        <a href="#programacaoWeb">Programação Web </a> <br />
+        <a href="#redeDeComputadores">Rede de Computadores</a><br />
+        <a href="#tcpIP">TCP/IP</a><br />
+        <a href="#http">Protocolo HTTP</a><br />
+        <a href="#desenvolvimentoWeb">Desenvolvimento Web</a><br />
+        <a href="#html">HTML</a><br />
+        <p>
+            <a href="formulario.html" target="_blank">Abrir Formulário</a>
+        </p>
+    </header>
     <hr />
-    <h2>Exemplo lista de detalhe</h2>
+
+    <h2 id="listaDetalhe">Exemplo lista de detalhe</h2>
     <dl>
         <dt>Item 1</dt>
         <dd>Este é o item 1 .... blábláblá</dd>
@@ -54,7 +131,7 @@
 
 
     <h1 id="programacaoWeb">Programação Web</h1>
-    <p><b>Lorem ipsum dolor sit amet consectetur</b> <i>adipisicing elit.</i> Earum error iure nihil doloremque beatae
+    <p style="padding: 20px; margin: 40px; border: solid 1px;"><b>Lorem ipsum dolor sit amet consectetur</b> <i>adipisicing elit.</i> Earum error iure nihil doloremque beatae
         aperiam saepe
         tempora, sunt, a delectus ipsam? Sapiente nihil accusamus suscipit sit? Iste nisi optio totam aut deserunt
         minima quae ipsa maiores repellendus mollitia recusandae impedit, eligendi fugiat expedita quis sint numquam
@@ -128,9 +205,9 @@
         eum dicta laudantium ut praesentium doloribus facilis odio corporis repudiandae. Possimus, corporis? Assumenda.
     </p>
 
-    <table width="100%" border="1" cellspacing="0" cellpadding="10">
+    <table>
         <thead>
-            <tr>
+            <tr style="background-color: lightgray;">
                 <th>Coluna 1</th>
                 <th>Coluna 2</th>
                 <th>Coluna 3</th>
@@ -138,7 +215,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr >
+            <tr>
                 <td style="text-align:center" valign="middle">1</td>
                 <td>2</td>
                 <td>3</td>
