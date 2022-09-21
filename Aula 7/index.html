@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
+
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <title>Aula 7</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 ">
+                <input type="text" id="txtNum1" class="form-control">
+            </div>
+            <div class="col-md-3 ">
+                <input type="text" id="txtNum2" class="form-control">
+            </div>
+            <div class="col-md-3 ">
+                <input type="text" id="txtResultado" class="form-control">
+            </div>
+            <div class="col-md-3 ">
+                <button onclick="mostrarNumero()" class="btn btn-success">Mostrar</button>
+                <button onclick="print()" class="btn btn-danger">Imprimir</button>
+                <button onclick="alerta('Teste')" class="btn btn-primary">Alerta</button>
+            </div>
+            <div class="col-md-12">
+                <label class="form-label">Defina a cor</label>
+                <input type="color" id="cor" class="form-control">
+                <button onclick="alterarCor()" class="btn btn-dark">Aplicar</button>
+                <p id="paragrafo1">Texto que iremos alterar</p>
+            </div>
+            <div class="col-md-12">
+                <input type="number" value="0" id="qtdeLinhas">
+                <button onclick="atualizarTabela()">Atualizar Tabela</button>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Sobrenome</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function alerta(msg) {
+            alert(msg);
+        }
+        function mostrarNumero() {
+            var num1 = document.getElementById('txtNum1');
+            var num2 = document.getElementById('txtNum2');
+            
+            document.getElementById('txtResultado').value =
+                        parseFloat(num1.value) + parseFloat(num2.value);
+        }
+
+        function alterarCor(){
+            var paragrafo = document.getElementById('paragrafo1');
+            var cor = document.getElementById('cor');
+            paragrafo.style.color = cor.value;
+            paragrafo.innerHTML = "Cor alterada para " + cor.value;
+        }
+
+        function atualizarTabela(){
+           // debugger;
+            var tbody = document.getElementById('tbody');
+            var qtdeLinhas = document.getElementById('qtdeLinhas');
+            
+            if(qtdeLinhas.value <= 0){
+                alert("Qtde linha deve ser superior a zero!");
+                return;
+            }
+
+            tbody.innerHTML = '';
+            for (let i = 0; i < qtdeLinhas.value; i++) {
+                var tr = document.createElement('tr');
+                var td1 = document.createElement('td');
+                var td2 = document.createElement('td');
+                
+                var txt1 = document.createTextNode('Nome ' + i);
+                var txt2 = document.createTextNode('Sobrenome ' + i);
+
+                td1.appendChild(txt1);
+                td2.appendChild(txt2);
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+
+                tbody.appendChild(tr);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
