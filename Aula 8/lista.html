@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+
+    <title>Exemplo Array</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <label class="label-control">Nome:</label>
+                <input class="form-control" id="nome">
+                <button class="btn btn-primary" onclick="inserir()">Inserir</button>
+            </div>
+            <div class="col-md-12">
+                <input class="form-control" id="filtro" onkeyup="filtrar()">
+                <ul id="lista"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var nomesArray = [];
+        function inserir(){
+            let nome = document.getElementById('nome');
+            nomesArray.push(nome.value);
+            atualizarLista();
+        }
+        function atualizarLista(){
+            let lista = document.getElementById('lista');
+            lista.innerHTML = '';
+            nomesArray.forEach(n => {
+                let li = document.createElement('li');
+                li.innerHTML = n;
+                lista.appendChild(li);
+            })
+        }
+        function filtrar(){          
+            let filtro = document.getElementById('filtro').value;
+            let lista = document.getElementById('lista');
+            lista.innerHTML = '';
+            let arrayFiltro = nomesArray.filter(n =>n.startsWith(filtro));
+            arrayFiltro.forEach(n =>{
+                let li = document.createElement('li');
+                li.innerHTML = n;
+                lista.appendChild(li);
+            })
+        }
+    </script>
+   </body>
+</html>
