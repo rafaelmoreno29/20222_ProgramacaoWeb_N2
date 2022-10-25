@@ -1,0 +1,8 @@
+<app-menu-topo [estaAutenticado]="autenticado"></app-menu-topo>
+<app-cadastra-aluno [(num1)]="numero"></app-cadastra-aluno>
+{{numero}}
+<button type="button" class="btn" [ngClass]="{'btn-danger': autenticado,
+'btn-success' : !autenticado}"
+(click)="autenticado = !autenticado">
+{{autenticado ? 'Logoff' : 'Autenticar'}}</button>
+<router-outlet></router-outlet>
