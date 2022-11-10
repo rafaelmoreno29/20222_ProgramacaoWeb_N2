@@ -14,6 +14,8 @@ import { PaiComponent } from './pai/pai.component';
 import { Filho1Component } from './pai/filho1/filho1.component';
 import { Filho2Component } from './pai/filho2/filho2.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,15 @@ import { FormsModule } from '@angular/forms';
     PageNotFoundComponent,
     PaiComponent,
     Filho1Component,
-    Filho2Component
+    Filho2Component,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
