@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h4 class="modal-title">Usuário</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<form #formUsuario="ngForm" ngNativeValidate (ngSubmit)="salvar(formUsuario)">
+    <input type="hidden" name="id" [(ngModel)]="usuario.id">
+    <div class="modal-body">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" name="nome" required [(ngModel)]="usuario.nome">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control"  name="email" required [(ngModel)]="usuario.email" >
+        </div>
+        <div class="mb-3">
+            <label for="senha" class="form-label">Senha</label>
+            <input type="password" class="form-control"  name="senha" required [(ngModel)]="usuario.senha">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-success">Salvar</button>
+    </div>
+</form>

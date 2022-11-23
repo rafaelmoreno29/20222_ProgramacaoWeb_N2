@@ -16,6 +16,7 @@ import { Filho2Component } from './pai/filho2/filho2.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioModalComponent } from './usuario/usuario-modal/usuario-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UsuarioComponent } from './usuario/usuario.component';
     PaiComponent,
     Filho1Component,
     Filho2Component,
-    UsuarioComponent
+    UsuarioComponent,
+    UsuarioModalComponent
   ],
   imports: [
     BrowserModule,
